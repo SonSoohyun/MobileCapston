@@ -5,13 +5,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_weight="10"
-    android:background="@drawable/activity_background"
+    android:background="@drawable/background_gradation"
+    android:baselineAligned="false"
     android:orientation="vertical">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"
+        android:layout_weight="1.5"
         android:orientation="horizontal"
         tools:layout_editor_absoluteX="8dp"
         tools:layout_editor_absoluteY="8dp">
@@ -21,7 +22,7 @@
             android:id="@+id/textView"
             android:layout_width="170dp"
             android:layout_height="33dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="10dp"
 
             android:layout_weight="1"
 
@@ -36,29 +37,49 @@
         <ImageView
             android:id="@+id/imageView"
             android:layout_width="54dp"
-            android:layout_height="33dp"
+            android:layout_height="wrap_content"
             android:layout_marginBottom="1dp"
             android:layout_marginRight="30dp"
 
-            android:layout_marginTop="20dp"
-            android:background="#00ffffff"
+            android:layout_marginTop="10dp"
+            android:background="#0000"
+            android:src="@drawable/setting"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:srcCompat="@drawable/edit_icon"
+
             tools:layout_editor_absoluteX="198dp" />
 
     </LinearLayout>
 
 
-    <ProgressBar
-        android:id="@+id/progressBar2"
-        style="?android:attr/progressBarStyleHorizontal"
+    <LinearLayout
         android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="4.5"
+        android:orientation="horizontal">
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:layout_weight="2"
+            android:indeterminate="false"
+            android:progress="70"
+
+            android:progressDrawable="@drawable/circle_progress_background" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:layout_weight="4.49"
-        android:indeterminate="false"
-        android:progress="100"
-        android:progressDrawable="@drawable/circle_progress_background" />
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="15dp"
+        android:gravity="center_horizontal"
+        android:text="70% Completed"
+        android:textColor="#ffffff"
+        android:textSize="24sp" />
 
     <TableLayout
         android:id="@+id/dash_table"
@@ -83,9 +104,8 @@
                 <TextView
                     android:id="@+id/textView2"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:text="DURATION"
+                    android:layout_height="49dp"
+                    android:background="@drawable/duration"
                     android:textColor="#ffffff" />
 
                 <TextView
@@ -108,9 +128,8 @@
                 <TextView
                     android:id="@+id/textView4"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="CALORIES"
+                    android:layout_height="50dp"
+                    android:background="@drawable/calories"
                     android:textColor="#ffffff" />
 
                 <TextView
@@ -139,9 +158,8 @@
                 <TextView
                     android:id="@+id/textView6"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="AVG SPEED"
+                    android:layout_height="47dp"
+                    android:background="@drawable/avg_speed"
                     android:textColor="#ffffff" />
 
                 <TextView
@@ -164,9 +182,8 @@
                 <TextView
                     android:id="@+id/textView8"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="TOTAL SCORE"
+                    android:layout_height="48dp"
+                    android:background="@drawable/total_score"
                     android:textColor="#ffffff" />
 
                 <TextView
@@ -181,5 +198,43 @@
         </TableRow>
 
     </TableLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2"
+        android:background="@android:color/transparent"
+        android:elevation="1dp"
+        android:orientation="horizontal"
+        android:paddingTop="10dp">
+
+        <ImageButton
+            android:id="@+id/histroyBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="#0000"
+            android:scaleType="fitCenter"
+            android:src="@drawable/history_tab" />
+
+        <ImageButton
+            android:id="@+id/peopleBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="#0000"
+            android:scaleType="fitCenter"
+            android:src="@drawable/people_tab" />
+
+        <ImageButton
+            android:id="@+id/rankingBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="#0000"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ranking_tab" />
+
+    </LinearLayout>
 
 </LinearLayout>

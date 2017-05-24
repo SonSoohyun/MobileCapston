@@ -23,14 +23,10 @@
             android:orientation="vertical"
             android:weightSum="1">
 
-            <EditText
-                android:id="@+id/editText4"
+            <TextView
+                android:id="@+id/textView10"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="#ffffff00"
-                android:ems="10"
-                android:inputType="textPersonName"
-                android:text=" " />
+                android:layout_height="wrap_content" />
 
             <EditText
                 android:id="@+id/input_id"
@@ -88,11 +84,12 @@
             android:orientation="horizontal"
             android:textAlignment="center">
 
-            <EditText
+            <TextView
                 android:id="@+id/findPW"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:ems="10"
+
                 android:hint="I Forgot PW"
                 android:inputType="textPersonName"
                 android:text="Forgot you password?"
@@ -100,7 +97,7 @@
                 android:textColor="#ffffff"
                 android:textColorHint="#ffffff" />
 
-            <EditText
+            <TextView
                 android:id="@+id/Signup"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
