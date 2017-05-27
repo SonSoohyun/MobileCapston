@@ -6,15 +6,55 @@ package com.example.soohyun.capston;
         import android.view.View;
         import android.widget.ImageButton;
         import android.widget.ProgressBar;
+        import android.widget.TextView;
+        import android.widget.Toast;
+
+        import com.google.firebase.database.DataSnapshot;
+        import com.google.firebase.database.DatabaseError;
+        import com.google.firebase.database.DatabaseReference;
+        import com.google.firebase.database.FirebaseDatabase;
+        import com.google.firebase.database.ValueEventListener;
+
+        import java.util.Iterator;
 
 /**
  * Created by sooHyun on 2017-05-20.
  */
 
 public class dashboardActivity extends Activity {
+    private DatabaseReference mDatabase;
+    private String email;
+    ValueEventListener checkRegister = new ValueEventListener() {
+        @Override
+        public void onDataChange(DataSnapshot dataSnapshot) {
+            Iterator<DataSnapshot> child = dataSnapshot.getChildren().iterator();
+            while(child.hasNext()){
+                if(email.equals(child.next().getKey())){
+                    Toast.makeText(getApplicationContext(), "존재하는 아이디 입니다.", Toast.LENGTH_LONG).show();
+                    mDatabase.removeEventListener(this);
+                    return;
+                }
+            }
+            mDatabase.child("email").setValue(email);
+        }
+
+        @Override
+        public void onCancelled(DatabaseError databaseError) {
+
+        }
+    };
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dashboard);
+        mDatabase = FirebaseDatabase.getInstance().getReference("user");
+        Intent intent = getIntent();
+       email = intent.getStringExtra("email");
+
+        TextView showemail = (TextView)findViewById(R.id.showEmail);
+        showemail.setText(email);
+        mDatabase.addListenerForSingleValueEvent(checkRegister);
+
 
         ImageButton historyBtn = (ImageButton) findViewById(R.id.histroyBtn);
         historyBtn.setOnClickListener(new View.OnClickListener() {

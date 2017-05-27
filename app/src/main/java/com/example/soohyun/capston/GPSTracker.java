@@ -32,10 +32,11 @@ import java.util.Set;
  * Created by JaeBeome on 2017. 5. 20..
  */
 
+
 public class GPSTracker extends Service implements LocationListener {
    //locationManager 객체 선언
-    private LocationManager locationManager;
 
+    private LocationManager locationManager;
     private Location previous_location, current_location;
     double total_moved_distance;
     private boolean isGPSon = false;

@@ -23,6 +23,7 @@
         <activity android:name=".rankingActivity"> </activity>
         <activity android:name=".peopleActivity"> </activity>
         <activity android:name=".gpsCalculateActivity"> </activity>
+        <activity android:name=".signUpActivity"> </activity>
 
     </application>
 

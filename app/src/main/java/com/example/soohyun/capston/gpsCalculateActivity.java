@@ -31,7 +31,6 @@ public class gpsCalculateActivity extends Activity {
         setContentView(R.layout.activity_gpscalculate);
         gps.startGPS(getApplicationContext(), gpsCalculateActivity.this);
 
-
         ImageButton imagebtn = (ImageButton) findViewById(R.id.completebtn);
         imagebtn.setOnClickListener(new ProgressBar.OnClickListener(){
             @Override
@@ -41,6 +40,7 @@ public class gpsCalculateActivity extends Activity {
                 Double totalDistance = gps.getDistance();
                intent_act.putExtra("totalDistance", totalDistance);
                 startActivity(intent_act);
+                finish();
 
             }
         });
@@ -50,10 +50,6 @@ public class gpsCalculateActivity extends Activity {
 
 
 
-    }
-
-    private void initGPS(gpsCalculation gps) {
-        if(gps == null){}
     }
 
 }
